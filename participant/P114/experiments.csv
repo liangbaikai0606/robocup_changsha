@@ -1,2 +1,71 @@
-experiment_id,description
-E001,ppo smoke 20000 steps seed 7101
+experiment_id,commit,what_changed,train_steps,public_suite,status,episodes_ok,performance_score,basic_coverage,cooperation_coverage,basic_collision,cooperation_collision,result_json,note
+E001,40407b6,未改策略，跑模板网络,0,public-suite-v1,ok,8,66.67,0,0.133,0,0,outputs/P114/eval/result.json,本机模板结果
+E002,40407b6 工作区未提交,追最近空圈；小于 0.25 且无空圈则速度反向,0,public-suite-v1,ok,8,183.33,0.083,0.283,0,0,outputs/P114/eval-rule-001/result.json,本机规则结果；working_tree_dirty 为 true；coop-0 覆盖为 0
+E003,40407b6 工作区未提交,仅把让行距离改为 0.2,0,public-suite-v1,ok,8,183.33,0.083,0.283,0,0,outputs/P114/eval-near-020/result.json,与 E002 分数相同；测完已改回 0.25
+E004,40407b6 工作区未提交,仅把让行距离改为 0.15,0,public-suite-v1,ok,8,183.33,0.083,0.283,0,0,outputs/P114/eval-near-015/result.json,与 E002 分数相同；测完已改回 0.25
+E005,40407b6 工作区未提交,仅把让行距离改为 0.3,0,public-suite-v1,ok,8,183.33,0.083,0.283,0,0,outputs/P114/eval-near-030/result.json,与 E002 分数相同；测完已改回 0.25
+E006,40407b6 工作区未提交,仅把让行距离改为 0.35,0,public-suite-v1,ok,8,183.33,0.083,0.283,0,0,outputs/P114/eval-near-035/result.json,与 E002 分数相同；测完已改回 0.25
+E007,40407b6 工作区未提交,仅把让行距离改为 0.4,0,public-suite-v1,ok,8,183.33,0.083,0.283,0,0,outputs/P114/eval-near-040/result.json,与 E002 分数相同；测完已改回 0.25
+E008,40407b6 工作区未提交,0.15 到 0.4 共 6 个距离各跑 10 次,0,public-suite-v1,ok,8,183.33,0.083,0.283,0,0,outputs/P114/repeat10/summary.json,60 次都是 183.33；种子固定且规则无随机
+E009,40407b6 工作区未提交,一人盯一个圈；看不见去空侧；不横穿队友速度,0,public-suite-v1,ok,8,116.67,0.067,0.167,0,0,outputs/P114/role10/run-01/result.json,已撤回；10 次都是 116.67；代码已恢复为 40407b6 模板
+E010,40407b6 工作区未提交,认领可见圈并在圈边跟随,0,public-suite-v1,ok,8,216.67,0.117,0.317,0,0,outputs/P114/eval-e010/result.json,已撤回；决策见 mypath/决策本.md
+E011,40407b6 工作区未提交,只提前刹车并拉向圈心,0,public-suite-v1,ok,8,216.67,0.117,0.317,0,0,outputs/P114/eval-e011/result.json,已撤回；与 E010 各局回报相同
+E012,40407b6 工作区未提交,不挤已认领圈；搜索改向场心,0,public-suite-v1,ok,8,216.67,0.117,0.317,0,0,outputs/P114/eval-e012/result.json,已撤回；代码已恢复为 40407b6 模板
+E013,40407b6 工作区未提交,先去左上左下右下，再到点后用 E002,0,public-suite-v1,ok,8,75.0,0,0.15,0,0,outputs/P114/corner10/run-01/result.json,已撤回；10 次都是 75.0；到点距离 0.10；路上不看圈
+E014,40407b6 工作区未提交,撤回 E013，恢复 E002 追空圈与掉头,0,public-suite-v1,ok,8,183.33,0.083,0.283,0,0,outputs/P114/eval-e014/result.json,与 E002 分数相同
+E015,40407b6 工作区未提交,E002 上只追比可见队友更近的空圈,0,public-suite-v1,ok,8,183.33,0.083,0.283,0,0,outputs/P114/eval-e015/result.json,与 E002 分数相同
+E018,40407b6 工作区未提交,E002 上只给 basic-1 和 coop-1 写死追圈,0,public-suite-v1,ok,8,183.33,0.083,0.283,0,0,outputs/P114/eval-e018/result.json,evaluate_one 实测；与 E002 相同
+E019,40407b6 工作区未提交,E002 上只给 basic-0 和 coop-0 写死追圈,0,public-suite-v1,ok,8,191.67,0.100,0.283,0,0,outputs/P114/eval-e019/result.json,basic-0 回报 0.33 变为 0.67；coop-0 仍是 0
+E020,40407b6 工作区未提交,E019 上 basic-1 与 coop-0 站圈优先且两个力都打满,0,public-suite-v1,ok,8,225.00,0.117,0.333,0,0,outputs/P114/eval-e020/result.json,basic-1 回报 1.33 变为 1.67；coop-0 回报 0 变为 1.00；碰撞为 0
+E021,40407b6 工作区未提交,E020 上 basic-0 与 coop-1 也改成两个力都打满,0,public-suite-v1,ok,8,225.00,0.117,0.333,0,0,outputs/P114/eval-e021/result.json,四局回报与 E020 相同；已被 E022 替换
+E022,40407b6 工作区未提交,E002 空圈优先与站圈优先混合：占着也去，不躲人,0,public-suite-v1,ok,8,221.67,0.117,0.333,0,0.033,outputs/P114/eval-e022/result.json,coop-0 回报 0.87，有碰撞；不记开局；已被 E024 替换
+E016,ce4b98b,全局 Oracle greedy 与 predictive,0,public-suite-v1,脚本自算,8,208.33,,,0,0,,predictive 近似分；greedy 为 183.33；不是 evaluate_one 的 result.json；不能当提交策略
+E017,40407b6 工作区未提交,固定分配提前瞄准的全局搜索,0,public-suite-v1,脚本自算,8,225.00,0.117,0.333,0,0,,最高是固定分配 225.00；动态分配 183.33；不是 evaluate_one
+E023,40407b6 工作区未提交,两车中心距 0.12 面对面满力对撞,0,无,机理实验,0,,,,,,,不是 evaluate_one；无覆盖分；路程 0.458 净位移 0.358 峰值速度 1.000；对照单车路程 0.249
+E024,40407b6 工作区未提交,两车中心距不超过 0.16 且远圈 6 步够不着时才对撞,0,public-suite-v1,ok,8,221.67,0.117,0.333,0,0.033,outputs/P114/eval-e024/result.json,当前上场代码；四个公开种子都没有触发对撞；分数与 E022 相同
+E025,40407b6 工作区未提交,E024 在 500 个随机种子的 uniform 与 crossing 布局上对比固定分配全局 Oracle,0,random500-paired,ok,1000,165.17,0.1698,0.165733,0.0128,0.013133,outputs/P114/random500-e025/summary.json,Oracle 167.54；配对差 2.37；E024 为 Oracle 的 98.59%；1000 回合对撞零触发
+E030,40407b6 工作区未提交,动态全局一对一分配扫描 distance + lambda×两步趋势且 lambda 为 0 到 4,0,random500-paired,诊断完成,5000,147.49,0.145667,0.150133,0.000667,0.003467,outputs/P114/random500-e030-trend-oracle/summary.json,最佳 lambda=0；其余分数 147.31/147.09/147.41/146.86；trend 无提升且增加切换；不移植
+E026,40407b6 工作区未提交,人工特例验证 E024 碰撞助推与关闭助推基线,0,人工特例,diagnostic,6,,,,,,outputs/P114/special-boost-e026-v2/summary.json,正例诊断分 160.00 对基线 100.00；覆盖 0.200 对 0.100；碰撞 0.200 对 0；两个反例均未触发；诊断分不是正式成绩
+E027,40407b6 工作区未提交,触发前比较预测覆盖收益与碰撞惩罚并留 0.05 安全裕量,0,public-suite-v1,ok,8,221.67,0.117,0.333,0,0.033,outputs/P114/eval-e026-netgain/result.json,预检通过；8 局完成；公开分与 E024 相同；人工正例仍提升 60 分诊断分；目标移动导致的预测误差仍存在
+E028,40407b6 工作区未提交,加入远距满油门、近圈提前刹车、超速反向制动和圈内目标速度跟随,0,public-suite-v1,ok,8,225.00,0.117,0.333,0,0,outputs/P114/eval-e028-follow-v2/result.json,第一次减速区过宽版本为 150.00 已撤回；当前三段式控制恢复到 E020/E021 的 225.00
+E028,40407b6 工作区未提交,固定分配全局 Oracle 加入满油门、提前收油、反向制动和圈内跟速四阶段控制,0,random100-paired,diagnostic,200,187.50,,,,,outputs/P114/oracle-four-stage-100/summary.json,旧 Oracle 183.73；四阶段增加 3.77；逐场景合并两类候选为 192.00；公开四种子仍为 225.00；不是合法策略或数学上界
+E029,40407b6 工作区未提交,按目标保存三帧距离并用物理余量与距离趋势分为可达边缘不可达,0,random1000-paired,diagnostic,2000,164.35,,,,,outputs/P114/dynamic-reachability-e029-confirm1000/summary.json,baseline 164.42；配对差 -0.07；0 胜 498 平 2 负；公开四种子均为 225.00；判断信号保留给 assignment 但不合入正式动作
+E030,40407b6 工作区未提交,联合枚举6种assignment并加入趋势与整体切换惩罚,0,random1000-paired,diagnostic,2000,147.68,,,,,outputs/P114/assignment-switch-e030-confirm1000/summary.json,同趋势无penalty为147.61；beta=0.03且不可达换出保留25% penalty；切换减少77.6%；保留集14胜474平12负；公开诊断分仍183.33不合入正式策略
+E031,40407b6 工作区未提交,动态全局距离分配给每台机器人换目标边增加固定 switch penalty 并扫描 beta,0,random500-paired,诊断完成,4000,147.57,0.146667,0.149333,0.0008,0.003467,outputs/P114/random500-e031-switch-penalty/summary.json,最佳 beta=0.03；比 beta0 高 0.087 且区间跨 0；8 胜487平5负；切换显著减少但无稳定分数收益
+E032,40407b6 工作区未提交,固定分配全局 Oracle 扫描 Kp 与 Kd 的 PD 控制并与 clip(10*位置差) 对照,0,random80-paired,diagnostic,160,186.75,,,,,outputs/P114/pd-oracle-e032/summary.json,调参选出 Kp=20 Kd=4；隔离半区 182.50 到 186.75 差 +4.25 区间不跨 0；8胜31平1负；公开四种子两者都是 225.00；不是合法策略不合入 entry.py
+E033,40407b6 工作区未提交,同一条 Kp=20 Kd=4 的 PD 上比较纯距离分配和可达性防抖分配,0,random300-paired,diagnostic,600,163.90,,,,,outputs/P114/reachability-debounce-e033/summary.json,plain 161.46；差 +2.44 区间 [0.80,4.09]；24胜270平6负；切换 0.205 到 0.243 没有减少；不是合法策略不合入 entry.py
+E034,40407b6 工作区未提交,可达性防抖不变，开车从 clip(10*位置差) 换成 Kp=20 Kd=4,0,random300-paired,diagnostic,600,163.90,,,,,outputs/P114/pd-on-debounce-e034/summary.json,比例控制 161.67；差 +2.23 区间 [1.36,3.11]；40胜253平7负；与 E033 同一批种子；不是合法策略不合入 entry.py
+E035,40407b6 工作区未提交,可达性防抖和外环速度相同，比较 P 刹车与 PD 控速,0,random300-paired,diagnostic,600,131.48,,,,,outputs/P114/speed-brake-e035/summary.json,P刹车 146.92；PD控速低 15.44 区间不跨 0；1胜130平169负；增益未搜索；低于 E034 的 163.90；不合入 entry.py
+E036,40407b6 工作区未提交,可达性防抖上比较连线距离的 P 和相对径向速度阻尼,0,random300-paired,diagnostic,600,62.10,,,,,outputs/P114/radial-pd-e036/summary.json,300 个种子合并；Kd=0.5 alpha=0.5；P 为 68.00；差 -5.90 区间 [-7.49,-4.31]；18胜190平92负；不合入 entry.py
+E037,40407b6 工作区未提交,E034 的二维比例追踪上只在靠近且正在冲向圈时加径向刹车,0,random300-paired,diagnostic,600,161.80,,,,,outputs/P114/radial-brake-e037/summary.json,基线 161.67 与 E034 比例控制相同；最高档差 +0.13 区间跨 0；7胜289平4负；网格在同一批种子上看过；不合入 entry.py
+E038,40407b6 工作区未提交,d_brake固定0.25，从已限幅的二维追踪力上扫Kd为0.25到1,0,random300-paired,diagnostic,600,160.52,,,,,outputs/P114/radial-brake-e038/summary.json,基线161.67；Kd0.25/0.5/1分别为160.52/158.99/155.52且都差于基线；出圈每局仍0.0083；最合适是不加刹车；不合入 entry.py
+E039,40407b6 工作区未提交,把丢掉的配对分按够不着、赶路、贴边、占圈、挤圈、碰撞加总,0,random300-paired,diagnostic,600,163.88,,,,,outputs/P114/loss-attribution-e039/summary.json,E028为163.88，比例控制161.67，位置PD163.90；E028失分836.12里够不着503.50；账目误差为0；不是evaluate_one；未改entry.py
+E040,40407b6 工作区未提交,用真实未来轨迹重判E039的开局够不着,0,random300-paired,diagnostic,600,484.33,,,,,outputs/P114/reachability-refine-e040/summary.json,503.50拆成硬不可达465.56、边缘18.78、目标帮忙12.33、二维力已够6.83；真进不去484.33；不是evaluate_one；未改entry.py
+E040,40407b6 工作区未提交,把E039四个大桶拆成可达性/贴边/匹配/赶路细类,0,random300-paired,diagnostic,600,163.88,,,,,outputs/P114/e039-bucket-refine/summary.json,粗桶与E039一致；硬不可达437.22；可避免分配9.17；一拍之差24.44；不是evaluate_one；未改entry.py
+E041,40407b6 工作区未提交,防抖分配不变，比较纯追踪、提前量、截击和3步MPC,0,random300-paired,diagnostic,600,163.26,,,,,outputs/P114/prediction-e041/summary.json,纯追踪161.67与E034比例控制相同；τ=0.3为163.26差+1.59区间不跨0；截击区间跨0；MPC162.44低于固定τ；不合入entry.py
+E042,40407b6 工作区未提交,把E040现象标签收成几何、目标运动、决策时序、分配四个互斥根因,0,random300-paired,diagnostic,600,163.88,,,,,outputs/P114/root-cause-e042/summary.json,高精度之和等于836.1222222222223；展示值相加836.13；根因为614.44/116.56/65.33/39.79；437.22全部二维进不去；不是evaluate_one；未改entry.py
+E043,40407b6 工作区未提交,β0固定0.03，切换成本再加α乘连续追踪步数，α从0到0.04,0,random300-paired,diagnostic,600,163.78,,,,,outputs/P114/commitment-e043/summary.json,α=0为163.78；α=0.01分数相同切换1.19到1.15；α=0.04为163.32区间跨0；启动晚四档都是21.56；不加追踪时长；未改entry.py
+E044,40407b6 工作区未提交,分配代价改成最早覆盖步数，开车仍是clip(10Δp),0,random300-paired,diagnostic,600,169.20,,,,,outputs/P114/time-cost-e044/summary.json,防抖161.67；最小总T为169.20差+7.53区间不跨0；省2步才换169.18；换目标0.153到0.025；全局状态；未改entry.py
+E045,40407b6 工作区未提交,把E044的截击分配跑公开四种子,0,public-suite-v1,脚本自算,4,225.00,0.117,0.333,0,0,outputs/P114/time-cost-public-e045/summary.json,t_min与t_save2都是225.00，四局回报与E028相同；同一环境重跑E028也是225.00；不是evaluate_one；未改entry.py
+E046,40407b6 工作区未提交,局部空圈从最近改成自己最早能罩住,0,random300-paired,diagnostic,600,164.71,,,,,outputs/P114/local-assignment-e046/summary.json,基线163.88与E028相同；差+0.83区间不跨0；9胜291平0负；公开四种子仍225.00；未改entry.py
+E047,40407b6 工作区未提交,可见队友截击步数至少少1步就让，平局编号小的优先,0,random300-paired,diagnostic,600,165.41,,,,,outputs/P114/local-assignment-e046/summary.json,比基线+1.53区间不跨0；30胜264平6负；碰撞0.0114到0.0071；未改entry.py
+E048,40407b6 工作区未提交,队友离开视野后软预约2步,0,random300-paired,diagnostic,600,165.41,,,,,outputs/P114/local-assignment-e046/summary.json,与E047分数覆盖碰撞换目标完全相同；这600局没有额外变化；未改entry.py
+E049,40407b6 工作区未提交,局部截击上再加至少省2步才换,0,random300-paired,diagnostic,600,165.11,,,,,outputs/P114/local-assignment-e046/summary.json,比基线+1.23；比不加这档的165.41低0.30；换目标0.145到0.095；未改entry.py
+E050,40407b6 工作区未提交,全局最小总T分配，开车仍用E028公式,0,random300-paired,diagnostic,600,167.92,,,,,outputs/P114/local-assignment-e046/summary.json,比局部基线+4.04区间不跨0；比局部最好的165.41高2.51；公开四种子225.00；全局状态；未改entry.py
+E051,40407b6 工作区未提交,E2上扫至少省0到4步才换，并换三批种子,0,random300-paired-x3,diagnostic,1800,165.41,,,,,outputs/P114/switch-save-e051/summary.json,0步三批为165.41/173.88/171.92；省2步都更低或持平且没有更高；省1步两批相同一批略低；不加省步门槛；未改entry.py
+E053,40407b6 工作区未提交,局部报价Q=-T+alpha*A，alpha为0/1/2，接管门槛delta为0/1,0,random300-paired,diagnostic,600,165.63,,,,,outputs/P114/claim-game-e053/summary.json,对照E2为165.41；alpha0且delta1与E2逐局相同；alpha0且delta0为165.63区间跨0；alpha1/2都低于E2且区间在0下；公开四种子alpha2降到200；未改entry.py
+E054,40407b6 工作区未提交,短时角色追踪驻守补位，并对照最近圈斥力和全圈相加势场,0,random300-paired,diagnostic,600,166.16,,,,,outputs/P114/role-field-e054/summary.json,守角色165.42与E2相同；补位166.16差+0.74区间跨0碰撞降到0.002；最近圈斥力166.03区间跨0公开221.67；全圈相加136.78差-28.63公开191.67；未改entry.py
+E052,40407b6 工作区未提交,用差分奖励和3步让位反事实拆开E046的+1.53,0,random300-paired,diagnostic,600,165.41,,,,,outputs/P114/coordination-e052/summary.json,最早罩住+0.83全是覆盖；让位再+0.70里碰撞+0.87覆盖-0.17；151次让位的1步差为0；软预约0次改变选择；不是evaluate_one；未改entry.py
+E052,40407b6 工作区未提交,上场代码只保留E028开车加上截击选圈和可见队友让圈,0,public-suite-v1,ok,8,225.00,0.117,0.333,0,0,outputs/P114/eval-e052-credit/result.json,公开225.00与E028相同；300种子配对165.41与E2逐局相同；全局169.20未写入entry.py
+E055,40407b6 工作区未提交,把169.20和局部165.41按速度、视野和开车方式拆开,0,random300-paired,diagnostic,600,169.20,,,,,outputs/P114/assignment-gap-e055/summary.json,局部165.41；真实速度+2.09；视野外队友-0.17；视野外圈+0.11；一对一+0.48且区间跨0；开车改比例+1.28到169.20；未改entry.py
+E056,40407b6 工作区未提交,把真实速度的+2.09拆成选圈、开车和刚看见的那一帧,0,random300-paired,diagnostic,600,167.50,,,,,outputs/P114/velocity-belief-e056/summary.json,只改截击+0.92；只改开车+1.33；两边一起+2.09；只填没有估计的那一帧也是+2.09且胜平负相同；已有估计的速度误差0.00085；清掉6次超速估计分数不变；未改entry.py
+E057,40407b6 工作区未提交,两帧速度裁速率或新旧各半，并对照比例、提前量和位置加相对速度,0,random300-paired,diagnostic,600,170.16,,,,,outputs/P114/speed-drive-e057/summary.json,原开车165.41；裁速率和新旧各半都是165.41；比例+2.28；提前量+3.91；位置加相对速度+4.74区间[3.44,6.05]；脚本公开四种子都是225；不是evaluate_one
+E057,40407b6 工作区未提交,上场开车改成20倍位置差加4倍相对速度，选圈不变,0,public-suite-v1,ok,8,225.00,0.117,0.333,0,0,outputs/P114/eval-e057/result.json,公开225.00与E052相同；300种子脚本分170.16见上一行
+E060,40407b6 工作区未提交,知道未来10步圈轨迹后重规划，并算速度圆和油门正方形上界,0,random300-paired,diagnostic,600,170.32,,,,,outputs/P114/offline-oracle-e060/summary.json,上场170.16；先知170.32差+0.17区间跨0；每局回报和1.703；速度圆469.17；油门正方形177.94；不是evaluate_one；未改entry.py
+E058,40407b6 工作区未提交,第一拍没有速度时比较不换圈、只跟位置、截击区间和真实速度,0,random300-paired,diagnostic,600,170.16,,,,,outputs/P114/cold-start-e058/summary.json,当前开车170.16；不换圈和只跟位置300种子全平；区间分配169.70差-0.46区间跨0；第一拍填真实速度170.80差+0.64区间跨0；未改entry.py
+E059,40407b6 工作区未提交,防抖分配上搜索未来3步的力，对照纯追踪提前量和位置加相对速度,0,random300-paired,diagnostic,600,163.73,,,,,outputs/P114/sequence-mpc-e059/summary.json,纯追踪161.67；提前0.3秒163.26；位置加相对速度163.90；729串163.73比提前量+0.48区间跨0；343模板163.76同样跨0；两者都低于163.90；未改entry.py
+E061,40407b6 工作区未提交,同一批种子上比较局部策略、全局截击、未来轨迹分配、动作束搜索，以及速度圆和油门正方形,0,random300-paired,diagnostic,600,172.58,,,,,outputs/P114/upper-bound-e060/summary.json,当前170.16；全局截击171.48差+1.32；未来轨迹172.58差+2.42；束搜索168.32差-1.83；速度圆468.33无人越过；不配对529.67；正方形175.06有1局越过；不是evaluate_one；未改entry.py
+E062,40407b6 工作区未提交,开发集上拨开Kp、Kd和让圈门槛，看是平地还是尖点,0,random300-paired,diagnostic,600,170.16,,,,,outputs/P114/sensitivity-e062/summary.json,对照170.16公开225；Kp从15到40区间跨0；Kp=10差-6.19公开216.67；Kd=2/0/8差-0.80/-2.53/-2.59；Kd=12差-17.13公开200；角(10,12)为109.33公开150；(40,12)与对照持平；门槛0到2跨0；不挑最高分；未改entry.py
+E063,40407b6 工作区未提交,从当前上场策略反向拿掉让圈、截击、位置加相对速度、已占圈靠后，并加省2步,0,dev300-plus-fresh300,diagnostic,1200,170.16,,,,,outputs/P114/integration-e063/summary.json,开发集170.16；新种子20261102为173.41；不让圈两批差-1.43/-1.36区间都在0下；去截击-0.63/-0.71区间跨0；去PD-2.47/-2.71区间都在0下；去掉已占圈靠后开发集+1.12但新种子-0.53区间跨0；省2步两批都没更高；未改entry.py
+E063,40407b6 工作区未提交,当前上场策略公开套件回归,0,public-suite-v1,ok,8,225.00,0.117,0.333,0,0,outputs/P114/eval-e063-public/result.json,与E057公开225.00相同；8局完成；两组碰撞为0
+E063,40407b6 工作区未提交,反向消融补上把目标速度当成0,0,dev300-plus-fresh300,diagnostic,1200,168.13,,,,,outputs/P114/integration-e063-velocity/summary.json,开发集拿掉速度-2.02区间在0下；新种子-0.49区间跨0；full仍是170.16和173.41；低于100的种子两批都是92；未改entry.py

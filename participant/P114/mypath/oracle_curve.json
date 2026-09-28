@@ -1,0 +1,162 @@
+{
+  "local_rule_score": 216.67,
+  "suite": "/Users/lqz/Desktop/robocup_changsha/configs/public-suite-v1.yaml",
+  "repeats": 1,
+  "note": "Privileged diagnostics. Not an official submission score.",
+  "hungarian_minsum": {
+    "score": 183.33,
+    "J_basic": 0.033333,
+    "J_coop": 0.333333,
+    "cases": [
+      {
+        "case_id": "basic-0",
+        "group_id": "basic",
+        "seed": 1001,
+        "J": 0.066667,
+        "cover": 0.066667,
+        "collision": 0.0
+      },
+      {
+        "case_id": "basic-1",
+        "group_id": "basic",
+        "seed": 1002,
+        "J": 0.0,
+        "cover": 0.0,
+        "collision": 0.0
+      },
+      {
+        "case_id": "coop-0",
+        "group_id": "cooperation",
+        "seed": 2001,
+        "J": 0.1,
+        "cover": 0.1,
+        "collision": 0.0
+      },
+      {
+        "case_id": "coop-1",
+        "group_id": "cooperation",
+        "seed": 2002,
+        "J": 0.566667,
+        "cover": 0.566667,
+        "collision": 0.0
+      }
+    ]
+  },
+  "greedy": {
+    "score": 225.0,
+    "J_basic": 0.116667,
+    "J_coop": 0.333333,
+    "cases": [
+      {
+        "case_id": "basic-0",
+        "group_id": "basic",
+        "seed": 1001,
+        "J": 0.066667,
+        "cover": 0.066667,
+        "collision": 0.0
+      },
+      {
+        "case_id": "basic-1",
+        "group_id": "basic",
+        "seed": 1002,
+        "J": 0.166667,
+        "cover": 0.166667,
+        "collision": 0.0
+      },
+      {
+        "case_id": "coop-0",
+        "group_id": "cooperation",
+        "seed": 2001,
+        "J": 0.1,
+        "cover": 0.1,
+        "collision": 0.0
+      },
+      {
+        "case_id": "coop-1",
+        "group_id": "cooperation",
+        "seed": 2002,
+        "J": 0.566667,
+        "cover": 0.566667,
+        "collision": 0.0
+      }
+    ]
+  },
+  "predictive": {
+    "score": 225.0,
+    "J_basic": 0.116667,
+    "J_coop": 0.333333,
+    "cases": [
+      {
+        "case_id": "basic-0",
+        "group_id": "basic",
+        "seed": 1001,
+        "J": 0.066667,
+        "cover": 0.066667,
+        "collision": 0.0
+      },
+      {
+        "case_id": "basic-1",
+        "group_id": "basic",
+        "seed": 1002,
+        "J": 0.166667,
+        "cover": 0.166667,
+        "collision": 0.0
+      },
+      {
+        "case_id": "coop-0",
+        "group_id": "cooperation",
+        "seed": 2001,
+        "J": 0.1,
+        "cover": 0.1,
+        "collision": 0.0
+      },
+      {
+        "case_id": "coop-1",
+        "group_id": "cooperation",
+        "seed": 2002,
+        "J": 0.566667,
+        "cover": 0.566667,
+        "collision": 0.0
+      }
+    ]
+  },
+  "mpc": {
+    "score": 225.0,
+    "J_basic": 0.116667,
+    "J_coop": 0.333333,
+    "cases": [
+      {
+        "case_id": "basic-0",
+        "group_id": "basic",
+        "seed": 1001,
+        "J": 0.066667,
+        "cover": 0.066667,
+        "collision": 0.0
+      },
+      {
+        "case_id": "basic-1",
+        "group_id": "basic",
+        "seed": 1002,
+        "J": 0.166667,
+        "cover": 0.166667,
+        "collision": 0.0
+      },
+      {
+        "case_id": "coop-0",
+        "group_id": "cooperation",
+        "seed": 2001,
+        "J": 0.1,
+        "cover": 0.1,
+        "collision": 0.0
+      },
+      {
+        "case_id": "coop-1",
+        "group_id": "cooperation",
+        "seed": 2002,
+        "J": 0.566667,
+        "cover": 0.566667,
+        "collision": 0.0
+      }
+    ]
+  }
+}
