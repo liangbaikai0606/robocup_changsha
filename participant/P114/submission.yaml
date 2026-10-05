@@ -4,7 +4,10 @@ protocol_version: "coverage-policy/1.0"
 task_version: "coverage-task/1.0"
 entrypoint: "entry:build_policy"
 artifact_dir: "artifacts"
-checkpoint_manifest: []
+checkpoint_manifest:
+  - path: "artifacts/README.txt"
+    sha256: "c1d1c747946285c35759dbf0838517da8362ec24784c37296de5d8aa1d3c9b94"
+    size_bytes: 119
 inference_lock: "requirements-infer.lock"
 method_type: "rule"
 train_command: null
