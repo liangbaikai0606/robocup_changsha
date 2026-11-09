@@ -126,9 +126,16 @@ $\beta=0.03$ 最好，但配对提升只有 0.087 分，95% 区间 [-0.54, 0.71]
 .venv/bin/python participant/P114/mypath/cold_start_e057.py --count 300 --workers 8 --output outputs/P114/cold-start-e058
 .venv/bin/python participant/P114/mypath/sequence_mpc_oracle.py --count 300 --workers 8 --output outputs/P114/sequence-mpc-e059
 .venv/bin/python scripts/evaluate_one.py --submission participant/P114 --suite configs/public-suite-v1.yaml --seeds configs/public-seeds-v1.json --output outputs/P114/eval-e057
+.venv/bin/python participant/P114/mypath/local_search_e065.py
 ```
 
+E064 的对照分在 `outputs/P114/rank-e065-20261007/summary.json`。脚本在本机 `/tmp/peers/rank_e065.py`，另外三份策略来自当时开着的 Final Submission 分支，不在本仓库里。这不是 `evaluate_one`。
+
 ## 局限
+
+E064 用主种子 `20261007` 新抽 300 个种子，把当前 `entry.py` 和 P514、P668、P007 的公开提交放在同一批上比。脚本分不是 `evaluate_one`：P114 为 169.26，P514 为 171.31，P007 为 169.38，P668 为 167.59。对 P514 的差是 -2.06，区间 [-3.41, -0.70]。对 P007 的差是 -0.12，区间跨 0。对 P668 的差是 +1.67，区间在 0 上面。见 `outputs/P114/rank-e065-20261007/summary.json`。这一批没有改 `entry.py`，也不是组织方核验。另外五份提交没有放进这批。
+
+E065 在 `mypath/local_search_e065.py` 里做了合法的局部动作搜索，没有换 `entry.py`。开发集 20261003 和隔离集 20261114 各 12 个种子。开发集上 CEM 只比当前规则高 0.17，区间跨 0。隔离集高 0.44，区间也跨 0。随机射击三档都没有更高。一步决策大约 1 毫秒。这 12 个种子上的 baseline 208 不能拿去和 300 种子上的 170.16 比，样本太小。见 `outputs/P114/local-search-e065/summary.json`。种群 256、迭代 4 轮和 300 个种子还没跑。
 
 E024 在四个公开种子上没有触发对撞，本机分仍是 221.67，和 E022 相同，低于 E021 查表的 225.00。差在 coop-0：覆盖仍是 0.10，但出现碰撞，回报从 1.00 变成 0.87。对撞预测把圈先当成不动，圈如果在这几步里拐弯，算出来的「进得了」可能对不上。正式成绩看未公开种子。
 
